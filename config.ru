@@ -11,7 +11,8 @@ run -> (env) {
     url: File.join(ENV["BASE_URL"], path_without_hash),
     viewport_width: 1200,
     viewport_height: 600,
-    device_scale: 2)
+    device_scale: 2,
+    ms_delay: 750)
   image_url = JSON.parse(image_result.body)["url"]
 
   Rack::Response.new.tap {|response| response.redirect(image_url, 301) }.finish
