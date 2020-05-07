@@ -1,7 +1,6 @@
 require "net/http"
 require "json"
 
-use Rack::ShowExceptions
 run -> (env) do
   request_path = Rack::Request.new(env).path
   if request_path == "/robots.txt"
